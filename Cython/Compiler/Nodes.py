@@ -6113,7 +6113,7 @@ class ExprStatNode(StatNode):
         if self.expr.type.is_pyobject and self.expr.result_in_temp():
             self.gil_error()
 
-    gil_message = "Discarding owned Python object"
+    gil_message = "Unassigned Python return value cannot be discarded"
 
     def generate_execution_code(self, code):
         code.mark_pos(self.pos)
